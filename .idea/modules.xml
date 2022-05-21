@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/BookingApp.iml" filepath="$PROJECT_DIR$/.idea/BookingApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Flipkart/.idea/Flipkart.iml" filepath="$PROJECT_DIR$/../Flipkart/.idea/Flipkart.iml" />
     </modules>
   </component>
 </project>

@@ -142,14 +142,14 @@ const Header = ({ type }) => {
                                                     -
                                                 </button>
                                                 <span className="optionCounterNumber">
-                          {options.adult}
-                        </span>
+                                                  {options.adult}
+                                                </span>
                                                 <button
                                                     className="optionCounterButton"
                                                     onClick={() => handleOption("adult", "i")}
                                                 >
                                                     +
-                                                </button>
+                                            </button>
                                             </div>
                                         </div>
                                         <div className="optionItem">
@@ -163,8 +163,8 @@ const Header = ({ type }) => {
                                                     -
                                                 </button>
                                                 <span className="optionCounterNumber">
-                          {options.children}
-                        </span>
+                                                  {options.children}
+                                                </span>
                                                 <button
                                                     className="optionCounterButton"
                                                     onClick={() => handleOption("children", "i")}
@@ -184,8 +184,8 @@ const Header = ({ type }) => {
                                                     -
                                                 </button>
                                                 <span className="optionCounterNumber">
-                          {options.room}
-                        </span>
+                                                  {options.room}
+                                                </span>
                                                 <button
                                                     className="optionCounterButton"
                                                     onClick={() => handleOption("room", "i")}
@@ -197,13 +197,13 @@ const Header = ({ type }) => {
                                     </div>
                                 )}
                             </div>
-                            <div className="headerSearchItem">
-                                <button className="headerBtn" onClick={handleSearch}>
-                                    Search
-                                </button>
-                            </div>
+                        <div className="headerSearchItem">
+                            <button className="headerBtn" onClick={handleSearch}>
+                                Search
+                            </button>
                         </div>
-                    </>
+                    </div>
+                </>
                 )}
             </div>
         </div>
@@ -211,4 +211,3 @@ const Header = ({ type }) => {
 };
 
 export default Header;
-1

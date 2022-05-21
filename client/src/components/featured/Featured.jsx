@@ -1,5 +1,6 @@
 import useFetch from "../../hooks/useFetch";
 import "./featured.css";
+import Footer from "../footer/Footer";
 
 const Featured = () => {
     const { data, loading, error } = useFetch(
@@ -52,3 +53,5 @@ const Featured = () => {
         </div>
     )
 }
+
+export default Featured;
