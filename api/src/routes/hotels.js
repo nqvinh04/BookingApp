@@ -7,6 +7,7 @@ import {createHotel,
         countByCity,
         countByType,
         getHotelRooms} from "../controllers/hotel.js";
+// import Hotel from "../models/hotel.js";
 import {verifyAdmin} from "../utils/verifyToken.js";
 
 const router = express.Router();
