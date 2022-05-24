@@ -1,5 +1,6 @@
 import express from "express";
 import Hotel from "../models/hotel.js";
+import Room from "../models/room.js";
 
 //Create
 export const createHotel = async (req, res, next)=>{
@@ -54,3 +55,52 @@ export const getHotels = async (req, res, next)=>{
         next(error);
     }
 }
+
+export const countByCity = async (req, res, next)=>{
+    const citis = req.query.cities.split(",");
+    try{
+        const list = await Promise.all(
+            citis.map((city)=>{
+                return Hotel.countDocuments({city:city});
+            })
+        );
+        res.status(200).json(list);
+    }catch (err){
+        next(err)
+    }
+};
+
+export const countByType = async (req, res, next)=>{
+    try{
+        const hotelCount = await Hotel.countDocuments({ type: "hotel"});
+        console.log(111111, hotelCount)
+        const apartmentCount = await Hotel.countDocuments({ type: "apartment"});
+        const resortCount = await Hotel.countDocuments({ type: "resort"});
+        const villaCount = await Hotel.countDocuments({ type: "villa"});
+        const cabinCount = await Hotel.countDocuments({ type: "cabin"})
+
+        res.status(200).json([
+            { type: "hotel", count: hotelCount},
+            { type: "apartments", count: apartmentCount},
+            { type: "resorts", count: resortCount},
+            { type: "villas", count: villaCount},
+            { type: "cabins", count: cabinCount},
+        ]);
+    }catch (err){
+        next(err)
+    }
+};
+
+export const getHotelRooms = async (req, res, next)=>{
+    try{
+        const hotel = await Hotel.findById(req.params.id);
+        const list = await Promise.all(
+            hotel.rooms.map((room)=>{
+                return Room.findById(room);
+            })
+        );
+        res.status(200).json(list)
+    }catch (err){
+        next(err);
+    }
+};
