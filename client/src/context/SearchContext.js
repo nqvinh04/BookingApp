@@ -1,4 +1,5 @@
 import { createContext, useReducer} from "react";
+
 const INITIAL_STATE = {
     city: undefined,
     dates: [],

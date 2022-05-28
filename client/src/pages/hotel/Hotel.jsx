@@ -4,12 +4,7 @@ import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {
-    faCircleArrowLeft,
-    faCircleArrowRight,
-    faCircleXmark,
-    faLocationDot,
-} from "@fortawesome/free-solid-svg-icons";
+import {faCircleArrowLeft, faCircleArrowRight, faCircleXmark, faLocationDot,} from "@fortawesome/free-solid-svg-icons";
 import {useContext, useState} from "react";
 import useFetch from "../../hooks/useFetch";
 import {useLocation, useNavigate} from "react-router-dom";
@@ -34,8 +29,7 @@ const Hotel = () => {
 
     function dayDifference(date1, date2) {
         const timeDiff = Math.abs(date2.getTime() - date1.getTime());
-        const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
-        return diffDays;
+        return Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
     }
 
     const days = dayDifference(dates[0].endDate, dates[0].startDate);
