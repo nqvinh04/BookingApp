@@ -1,14 +1,35 @@
-.login {
-    height: 100vh;
+.login{
+    /*height: 100vh;*/
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.lContainer {
+.login-body{
+    position:relative;
+    margin-top: 48px;
+    padding-left:16px;
+    padding-right:16px;
+    padding-top:16px;
+    text-align:left;
+}
+
+.lContainer{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 500px;
+}
+
+.spacer-largest{
+    margin-bottom: 32px;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
 }
 
 .lInput{
@@ -16,7 +37,7 @@
     padding: 10px;
 }
 
-.lButton {
+.lButton{
     border: none;
     padding: 10px 20px;
     background-color: #0071c2;
@@ -24,6 +45,95 @@
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
+    height: 60px;
+}
+
+.access-panel_social{
+    margin-bottom: -8px;
+}
+
+.access-panel_social-divider{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.access-panel_social-divider-text{
+    white-space: nowrap;
+    margin: 0 8px 2px;
+}
+
+.u-text-center{
+    text-align: center!important;
+}
+
+.social-expand-link{
+    padding: 11px 0 8px;
+    cursor: pointer;
+}
+
+.bui-button-link{
+    background-color: transparent!important;
+    border: 0!important;
+    outline: none!important;
+    display: inline;
+    padding: 0;
+    min-height: 1em;
+    width: auto;
+    border-radius: 0;
+    color: #0071c2!important;
+}
+
+.bui_font_strong{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.access-panel_social-divider-line{
+    height: 1px;
+    width: 100%;
+    background-color: #dedede;
+}
+
+.access-panel__social-buttons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 8px 0 0;
+}
+
+.access-panel__social-button{
+    display: flex;
+    padding: 23px;
+    border: 1px solid #e6e6e6!important;
+    margin: 16px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+}
+
+.bui-button {
+    transition: all .25s ease-in-out;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+.access-panel__social-button-content{
+    display: flex;
+    align-items: center;
+}
+
+.access-panel__social-button-image{
+    height: 24px;
 }
 
 .lButton:disabled{
