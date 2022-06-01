@@ -118,8 +118,25 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="account-access__footer">
-                    <div>
-
+                    <div className="u-text-center bui_font_caption portal_footer">
+                        <div className="account_footer_terms footer-block">
+                            <p>By signing in or creating an account, you agree with our
+                                <a>
+                                    Terms & conditions
+                                </a>
+                            </p>
+                            and
+                            <a>
+                                Privacy statement
+                            </a>
+                        </div>
+                        <div className="access-footer-bottom bui_font_caption footer-block">
+                            <div>
+                                All rights reserved.
+                                <br/>
+                                Copyright (2006 - 2022) - Booking.com™
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

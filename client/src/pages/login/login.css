@@ -86,7 +86,7 @@
 }
 
 .bui_font_strong{
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 20px;
 }
@@ -134,6 +134,28 @@ a {
 
 .access-panel__social-button-image{
     height: 24px;
+}
+
+.account-access__footer{
+    padding: 16px;
+}
+
+.footer-block {
+    padding: 16px 0;
+    border-top: 1px solid #e6e6e6;
+}
+
+.bui_font_caption{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.portal_footer{
+    width: 360px;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .lButton:disabled{
