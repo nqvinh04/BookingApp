@@ -15,6 +15,7 @@
 }
 
 .logo{
+    margin-left: 20px;
     font-weight: 700;
     font-size: 36px;
 }
@@ -25,4 +26,9 @@
     padding: 5px 10px;
     cursor: pointer;
     color: #003580;
+}
+
+.navButtonLogin{
+    margin-right: 20px;
+;
 }
