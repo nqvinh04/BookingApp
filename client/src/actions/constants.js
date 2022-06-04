@@ -1,3 +1,10 @@
+export const checkMailConstants = {
+    //Check Mail
+    LOGIN_REQUEST: "CHECKMAIL_REQUEST",
+    LOGIN_FAILURE: "CHECKMAIL_FAILURE",
+    LOGIN_SUCCESS: "CHECKMAIL_SUCCESS",
+}
+
 export const authConstants = {
     //LOGIN
     LOGIN_REQUEST: "LOGIN_REQUEST",

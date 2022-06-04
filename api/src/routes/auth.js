@@ -1,5 +1,5 @@
 import express from "express";
-import {loginAuth, registerAuth} from "../controllers/auth.js";
+import {checkMail, loginAuth, registerAuth} from "../controllers/auth.js";
 
 
 const router = express.Router();
@@ -10,6 +10,8 @@ router.post("/register", registerAuth);
 
 //Login
 router.post("/login", loginAuth);
+
+router.post("/checkMail", checkMail);
 
 
 export default router;
