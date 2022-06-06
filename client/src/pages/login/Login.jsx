@@ -19,6 +19,7 @@ const Login = () => {
     const [showRegisterPass, setShowRegisterPass] = useState(false);
     const [email, setEmail] = useState("");
     const [signup, setSignup] = useState(true);
+    // const dispatch = useDispatch();
 
     const { loading, error, dispatch } = useContext(AuthContext);
 
@@ -40,10 +41,18 @@ const Login = () => {
         }
     };
 
+    const checkPassword = () => {
+        console.log('Kiem tra mk dang nhap')
+    }
+
+    const createUser = () => {
+        console.log('Dang ky tai khoan')
+    }
+
 
     const renderPassword = (props) => {
         return (
-            <div>
+            <div className="lContainer">
                 <div className="header-login">
                     <h1>
                         Enter your password
@@ -72,7 +81,7 @@ const Login = () => {
                             </div>
                             {error && <span>{error.message}</span>}
                         </div>
-                        <button disabled={loading} onClick={handleClick} className="lButton">
+                        <button disabled={loading} onClick={checkPassword} className="lButton">
                             Sign in
                         </button>
                     </div>
@@ -83,7 +92,7 @@ const Login = () => {
 
     const renderRegisterPassword = (props) => {
         return (
-            <div>
+            <div className="lContainer">
                 <div className="header-login">
                     <h1>
                         Create password
@@ -129,7 +138,7 @@ const Login = () => {
                             </div>
                             {error && <span>{error.message}</span>}
                         </div>
-                        <button disabled={loading} onClick={handleClick} className="lButton">
+                        <button disabled={loading} onClick={createUser} className="lButton">
                             Create account
                         </button>
                     </div>
@@ -141,9 +150,9 @@ const Login = () => {
     return (
         <div>
             <Navbar />
-            { showLogin && (
-                <div className="login">
-                    <div className="login-body">
+            <div className="login">
+                <div className="login-body">
+                    { showLogin && (
                         <div className="lContainer">
                             <div className="header-login">
                                 <h1>
@@ -181,8 +190,8 @@ const Login = () => {
                                 <div className="access-panel_social-divider">
                                     <div className="access-panel_social-divider-line"></div>
                                     <span className="access-panel_social-divider-text">
-                                or use one of these options
-                            </span>
+                                        or use one of these options
+                                    </span>
                                     <div className="access-panel_social-divider-line"></div>
                                 </div>
                                 <div className="access-panel__social-buttons">
@@ -221,34 +230,34 @@ const Login = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="account-access__footer">
-                            <div className="u-text-center bui_font_caption portal_footer">
-                                <div className="account_footer_terms footer-block">
-                                    <p>By signing in or creating an account,
-                                        you agree with our <a
-                                            href=""
-                                        >
-                                            Terms & conditions
-                                        </a> and <a
-                                            href=""
-                                        >
-                                            Privacy statement
-                                        </a>
-                                    </p>
-                                </div>
-                                <div className="access-footer-bottom bui_font_caption footer-block">
-                                    <div>
-                                        All rights reserved.
-                                        <br/>
-                                        Copyright (2006 - 2022) - Booking.com™
-                                    </div>
+                    )}
+                    { signup ? renderPassword() : renderRegisterPassword() }
+                    <div className="account-access__footer">
+                        <div className="u-text-center bui_font_caption portal_footer">
+                            <div className="account_footer_terms footer-block">
+                                <p>By signing in or creating an account,
+                                    you agree with our <a
+                                        href=""
+                                    >
+                                        Terms & conditions
+                                    </a> and <a
+                                        href=""
+                                    >
+                                        Privacy statement
+                                    </a>
+                                </p>
+                            </div>
+                            <div className="access-footer-bottom bui_font_caption footer-block">
+                                <div>
+                                    All rights reserved.
+                                    <br/>
+                                    Copyright (2006 - 2022) - Booking.com™
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            )}
-            { signup ? renderPassword() : renderRegisterPassword() }
+            </div>
         </div>
 
     );
