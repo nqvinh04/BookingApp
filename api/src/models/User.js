@@ -30,6 +30,9 @@ const UserSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        confirmPassword: {
+            type: String,
+        },
         isAdmin: {
             type: Boolean,
             default: false,

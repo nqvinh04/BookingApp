@@ -34,7 +34,7 @@
 }
 
 .lInput{
-    height: 30px;
+    height: 20px;
     padding: 10px;
 }
 
@@ -46,7 +46,7 @@
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
-    height: 60px;
+    height: 50px;
 }
 
 .access-panel_social{

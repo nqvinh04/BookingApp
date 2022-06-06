@@ -8,12 +8,22 @@ import Google from "../../images/logo/search.png";
 import Phone from "../../images/logo/smartphone.png";
 import "./login.css";
 
+const checkPassword = (props) => {
 
-const Login = () => {
+}
+
+const checkRegisterPass = (props) => {
+
+}
+
+
+const Login = (props) => {
     const [credentials, setCredentials] = useState({
         username: undefined,
         password: undefined,
     });
+    const [showPassword, setShowPassword] = useState(false);
+    const [showRegisterPass, setShowRegisterPass] = useState(false);
 
     const { loading, error, dispatch } = useContext(AuthContext);
 
@@ -48,30 +58,104 @@ const Login = () => {
                             </h1>
                             <div className="spacer-largest"></div>
                         </div>
-                        <div className="form-login">
-                            <span>Email address</span>
-                            <input
-                                type="text"
-                                placeholder="username"
-                                id="username"
-                                onChange={handleChange}
-                                className="lInput"
-                            />
-                            {/*<input*/}
-                            {/*    type="password"*/}
-                            {/*    placeholder="password"*/}
-                            {/*    id="password"*/}
-                            {/*    onChange={handleChange}*/}
-                            {/*    className="lInput"*/}
-                            {/*/>*/}
-                            <button disabled={loading} onClick={handleClick} className="lButton">
-                                Continue with email
-                            </button>
-                            {/*<button disabled={loading} onClick={handleClick} className="lButton">*/}
-                            {/*    Login*/}
-                            {/*</button>*/}
-                            {error && <span>{error.message}</span>}
+                        <div className="header-login">
+                            <h1>
+                                Create password
+                            </h1>
+                            <div className="header-login">
+                                <span>
+                                    Use a minimum of 10 characters, including uppercase
+                                    letters, lowercase letters, and numbers.
+                                </span>
+                            </div>
+                            <div className="spacer-largest"></div>
                         </div>
+                        <div className="header-login">
+                            <h1>
+                                Enter your password
+                            </h1>
+                            <div className="header-login">
+                                <span>
+                                    Enter your Booking.com password for testlaptrinh04@gmail.com.
+                                </span>
+                            </div>
+                            <div className="spacer-largest"></div>
+                        </div>
+
+                        <form>
+                            <div className="form-login">
+                                <div>
+                                    <label>Email address</label>
+                                    <div>
+                                        <div className="form-login">
+                                            <input
+                                                type="text"
+                                                placeholder="username"
+                                                id="username"
+                                                onChange={handleChange}
+                                                className="lInput"
+                                            />
+                                            <div>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {error && <span>{error.message}</span>}
+                                </div>
+
+                                <div>
+                                    <label>Password</label>
+                                    <div>
+                                        <div className="form-login">
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                id="password"
+                                                onChange={handleChange}
+                                                className="lInput"
+                                            />
+                                            <div>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {error && <span>{error.message}</span>}
+                                </div>
+
+                                <div>
+                                    <label>Confirm password</label>
+                                    <div>
+                                        <div className="form-login">
+                                            <input
+                                                type="text"
+                                                placeholder=""
+                                                id="confirm_password"
+                                                onChange={handleChange}
+                                                className="lInput"
+                                            />
+                                            <div>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {error && <span>{error.message}</span>}
+                                </div>
+
+                                <button disabled={loading} onClick={handleClick} className="lButton">
+                                    Continue with email
+                                </button>
+                                <button disabled={loading} onClick={handleClick} className="lButton">
+                                    Create account
+                                </button>
+                                <button disabled={loading} onClick={handleClick} className="lButton">
+                                    Login
+                                </button>
+                                {/*{error && <span>{error.message}</span>}*/}
+                            </div>
+                        </form>
                         <div className="access-panel_social">
                             <div className="access-panel_social-divider">
                                 <div className="access-panel_social-divider-line"></div>
