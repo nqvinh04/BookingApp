@@ -75,8 +75,8 @@ const Login = () => {
                                 <div className="form-login">
                                     <input
                                         type="text"
-                                        placeholder="username"
-                                        id="username"
+                                        placeholder="Email"
+                                        id="email"
                                         onChange={(e) => setEmail(e.target.value)}
                                         className="lInput"
                                     />
