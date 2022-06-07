@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+// import { AuthContext } from "../../context/AuthContext";
 import Navbar from "../../components/navbar/Navbar";
+import { useDispatch, useSelector} from "react-redux";
 import "./register.css";
 
 
-const Register = () => {
+const Login = () => {
     const [credentials, setCredentials] = useState({
         username: undefined,
         password: undefined,
@@ -14,8 +15,14 @@ const Register = () => {
     const [showLogin, setShowLogin] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
     const [showRegisterPass, setShowRegisterPass] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassWord] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [error, setError] = useState("");
+    const [signup, setSignup] = useState(true);
+    const dispatch = useDispatch();
 
-    const { loading, error, dispatch } = useContext(AuthContext);
+    // const { loading, error, dispatch } = useContext(AuthContext);
 
     const navigate = useNavigate()
 
@@ -35,50 +42,21 @@ const Register = () => {
         }
     };
 
+    // const checkEmail = () => {
+    //     console.log('Kiem tra email')
+    // }
+    //
+    // const checkPassword = () => {
+    //     console.log('Kiem tra mk dang nhap')
+    // }
 
-    const renderSignInPassword = (props) => {
-        return (
-            <div>
-                <div className="header-login">
-                    <h1>
-                        Enter your password
-                    </h1>
-                    <div className="header-login">
-                    <span>
-                        Enter your Booking.com password for testlaptrinh04@gmail.com.
-                    </span>
-                    </div>
-                    <div className="spacer-largest"></div>
-                </div>
-                <form>
-                    <div className="form-login">
-                        <div>
-                            <label>Password</label>
-                            <div>
-                                <div className="form-login">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        id="password"
-                                        onChange={handleChange}
-                                        className="lInput"
-                                    />
-                                </div>
-                            </div>
-                            {error && <span>{error.message}</span>}
-                        </div>
-                        <button disabled={loading} onClick={handleClick} className="lButton">
-                            Sign in
-                        </button>
-                    </div>
-                </form>
-            </div>
-        )
+    const createUser = () => {
+        console.log('Dang ky tai khoan')
     }
 
     const renderRegisterPassword = (props) => {
         return (
-            <div>
+            <div className="lContainer">
                 <div className="header-login">
                     <h1>
                         Create password
@@ -101,7 +79,7 @@ const Register = () => {
                                         type="text"
                                         placeholder=""
                                         id="password"
-                                        onChange={handleChange}
+                                        onChange={(e) => setPassWord(e.target.value)}
                                         className="lInput"
                                     />
                                 </div>
@@ -117,14 +95,17 @@ const Register = () => {
                                         type="text"
                                         placeholder=""
                                         id="confirm_password"
-                                        onChange={handleChange}
+                                        onChange={(e) => setConfirmPassword(e.target.value)}
                                         className="lInput"
                                     />
                                 </div>
                             </div>
                             {error && <span>{error.message}</span>}
                         </div>
-                        <button disabled={loading} onClick={handleClick} className="lButton">
+                        <button
+                            // disabled={loading}
+                            onClick={createUser}
+                            className="lButton">
                             Create account
                         </button>
                     </div>
@@ -138,40 +119,7 @@ const Register = () => {
             <Navbar />
             <div className="login">
                 <div className="login-body">
-                    <div className="lContainer">
-                        <div className="header-login">
-                            <h1>
-                                Sign in or create an account
-                            </h1>
-                            <div className="spacer-largest"></div>
-                        </div>
-                            <form>
-                                <div className="form-login">
-                                    <div>
-                                        <label>Email address</label>
-                                        <div>
-                                            <div className="form-login">
-                                                <input
-                                                    type="text"
-                                                    placeholder="username"
-                                                    id="username"
-                                                    onChange={handleChange}
-                                                    className="lInput"
-                                                />
-                                                <div>
-                                                    <span></span>
-                                                    <span></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {error && <span>{error.message}</span>}
-                                    </div>
-                                    <button disabled={loading} onClick={handleClick} className="lButton">
-                                        Continue with email
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                    { !signup && renderRegisterPassword() }
                     <div className="account-access__footer">
                         <div className="u-text-center bui_font_caption portal_footer">
                             <div className="account_footer_terms footer-block">
@@ -202,4 +150,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default Login;

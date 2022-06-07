@@ -1,9 +1,27 @@
-import {authConstants} from "./constants";
+import {authConstants, checkMailConstants} from "./constants";
 import axios from "../helpers/axios";
 
 // action check mail
-export const checkMail = () => {
+export const checkMail = (email) => {
+    console.log('da vao roi nha');
+    return async (dispatch) => {
+        dispatch({ type: checkMailConstants.CHECKMAIL_REQUEST });
+        const res = await axios.post(`/checkMail`, email);
 
+        if (res.status === 200){
+            dispatch({
+                type: checkMailConstants.CHECKMAIL_SUCCESS,
+                payload: {
+
+                }
+            })
+        }else{
+            dispatch({
+                type: checkMailConstants.CHECKMAIL_FAILURE,
+                payload: { error: "Email khong ton tai" }
+            })
+        }
+    }
 }
 
 // action login
